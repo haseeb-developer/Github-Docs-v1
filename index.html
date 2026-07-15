@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A premium interactive Git and GitHub learning experience for beginners.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Learn Git & GitHub</title>
+</head>
+
+<body>
+    <div class="page-shell">
+        <header class="hero-card">
+            <div class="hero-copy">
+                <p class="eyebrow">Git & GitHub Learning</p>
+                <h1>Learn Git & GitHub the practical way</h1>
+                <p class="subtitle">This page teaches the concept first, then shows what happens behind the scenes, and
+                    finally helps you practice with tiny quizzes.</p>
+                <div class="search-box">
+                    <label for="articleSearch" class="sr-only">Search article content</label>
+                    <input id="articleSearch" type="search"
+                        placeholder="Search topics like branch, commit, github, install...">
+                </div>
+            </div>
+        </header>
+
+        <main class="article-layout">
+            <aside class="toc-card">
+                <h2>Quick Topics</h2>
+                <ul>
+                    <li><a href="#what-is-git">What is Git?</a></li>
+                    <li><a href="#what-is-github">What is GitHub?</a></li>
+                    <li><a href="#install-git">Install Git</a></li>
+                    <li><a href="#configure-git">Configure Git</a></li>
+                    <li><a href="#basic-commands">Basic commands</a></li>
+                </ul>
+            </aside>
+
+            <article class="article-card">
+                <section class="article-section"
+                    data-keywords="what is git version control history why exists analogy photo album commit branch">
+                    <div class="article-block lesson-block">
+                        <div class="article-head">
+                            <h2 id="what-is-git">What is Git?</h2>
+                        </div>
+
+                        <div class="lesson-grid">
+                            <div class="mini-card definition-card">
+                                <h3>1. Introduction</h3>
+                                <p>Git is a tool that tracks changes in your files over time. It lets you save versions
+                                    of your work, compare them, and go back if something breaks.</p>
+                            </div>
+                            <div class="mini-card why-card">
+                                <h3>2. Why it exists</h3>
+                                <p>Before Git, developers often saved files as <strong>final.doc</strong>,
+                                    <strong>final_final.doc</strong>, and <strong>final_final_really.doc</strong>. That
+                                    created confusion and mistakes.
+                                </p>
+                            </div>
+                            <div class="mini-card analogy-card">
+                                <h3>3. Real life analogy</h3>
+                                <p>Think of Git like a photo album with date-stamped snapshots. Every time you make an
+                                    important change, Git saves a new snapshot for you.</p>
+                            </div>
+                            <div class="mini-card process-card">
+                                <h3>4. How it works</h3>
+                                <div class="step-flow">
+                                    <div class="flow-card">Edit file</div>
+                                    <div class="flow-arrow">→</div>
+                                    <div class="flow-card">Stage changes</div>
+                                    <div class="flow-arrow">→</div>
+                                    <div class="flow-card">Commit</div>
+                                    <div class="flow-arrow">→</div>
+                                    <div class="flow-card">History saved</div>
+                                </div>
+                            </div>
+                            <div class="mini-card visual-card">
+                                <h3>5. Visual learning</h3>
+                                <div class="visual-grid">
+                                    <div class="visual-pill">Version history</div>
+                                    <div class="visual-pill">Save point</div>
+                                    <div class="visual-pill">Rollback</div>
+                                    <div class="visual-pill">Team collaboration</div>
+                                </div>
+                            </div>
+                            <div class="mini-card behind-card">
+                                <h3>6. Behind the scenes</h3>
+                                <p>Git stores snapshots of your files in a hidden repository. It does not just save one
+                                    file; it keeps a chain of commits that can be compared later.</p>
+                            </div>
+                            <div class="mini-card warning-card">
+                                <h3>7. Common beginner mistakes</h3>
+                                <ul>
+                                    <li>Committing everything without checking changes</li>
+                                    <li>Writing bad commit messages</li>
+                                    <li>Forgetting to pull updates before pushing</li>
+                                </ul>
+                            </div>
+                            <div class="mini-card takeaway-card">
+                                <h3>8. Key takeaways</h3>
+                                <ul>
+                                    <li>Git helps you track changes</li>
+                                    <li>Commits are checkpoints</li>
+                                    <li>Branches help you safely experiment</li>
+                                    <li>History makes recovery easier</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="remember-card">
+                            <strong>Remember this:</strong>
+                            <p>Git is your project timeline, and every commit is a saved checkpoint you can return to
+                                anytime.</p>
+                        </div>
+
+                        <div class="quiz-card" data-answer="b">
+                            <h3>Mini Quiz</h3>
+                            <div class="quiz-question">What is the main job of Git?</div>
+                            <div class="quiz-options">
+                                <button class="quiz-option" data-choice="a">To design websites</button>
+                                <button class="quiz-option" data-choice="b">To track and save versions of files</button>
+                                <button class="quiz-option" data-choice="c">To make videos</button>
+                            </div>
+                            <div class="quiz-feedback">Choose an answer to see the explanation.</div>
+                        </div>
+
+                        <div class="related-topics">
+                            <h3>You should learn these next:</h3>
+                            <div class="related-grid">
+                                <a href="#what-is-github" class="related-card">What is GitHub?</a>
+                                <a href="#install-git" class="related-card">Install Git</a>
+                                <a href="#basic-commands" class="related-card">Basic commands</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article-section"
+                    data-keywords="what is github platform repository remote collaboration pull requests social code hosting">
+                    <div class="article-block lesson-block">
+                        <div class="article-head">
+                            <h2 id="what-is-github">What is GitHub?</h2>
+                        </div>
+                        <div class="lesson-grid">
+                            <div class="mini-card definition-card">
+                                <h3>1. Introduction</h3>
+                                <p>GitHub is a website where people store Git repositories online. It makes sharing,
+                                    collaborating, and reviewing code easier.</p>
+                            </div>
+                            <div class="mini-card why-card">
+                                <h3>2. Why it exists</h3>
+                                <p>Git helps you save versions locally. GitHub helps you share those versions with
+                                    others, keep backups, and work in teams.</p>
+                            </div>
+                            <div class="mini-card analogy-card">
+                                <h3>3. Real life analogy</h3>
+                                <p>If Git is your personal notebook, GitHub is the school library where everyone can
+                                    see, borrow, and improve the shared notes.</p>
+                            </div>
+                            <div class="mini-card process-card">
+                                <h3>4. How it works</h3>
+                                <div class="step-flow">
+                                    <div class="flow-card">Push code</div>
+                                    <div class="flow-arrow">→</div>
+                                    <div class="flow-card">Remote repo</div>
+                                    <div class="flow-arrow">→</div>
+                                    <div class="flow-card">Review</div>
+                                    <div class="flow-arrow">→</div>
+                                    <div class="flow-card">Merge</div>
+                                </div>
+                            </div>
+                            <div class="mini-card behind-card">
+                                <h3>6. Behind the scenes</h3>
+                                <p>GitHub stores your repository on servers and gives you features like pull requests,
+                                    issues, branches, and collaboration tools.</p>
+                            </div>
+                            <div class="mini-card warning-card">
+                                <h3>7. Common beginner mistakes</h3>
+                                <ul>
+                                    <li>Pushing directly to the main branch</li>
+                                    <li>Ignoring pull request reviews</li>
+                                    <li>Not checking whether your branch is up to date</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="remember-card">
+                            <strong>Remember this:</strong>
+                            <p>Git stores your history locally. GitHub gives that history a home online and makes
+                                teamwork possible.</p>
+                        </div>
+
+                        <div class="quiz-card" data-answer="a">
+                            <h3>Mini Quiz</h3>
+                            <div class="quiz-question">Which one is a GitHub feature?</div>
+                            <div class="quiz-options">
+                                <button class="quiz-option" data-choice="a">Pull request</button>
+                                <button class="quiz-option" data-choice="b">Spreadsheet</button>
+                                <button class="quiz-option" data-choice="c">Printer driver</button>
+                            </div>
+                            <div class="quiz-feedback">Choose an answer to see the explanation.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article-section"
+                    data-keywords="see others github browse repository clone pull fetch remote repository view changes">
+                    <div class="article-block lesson-block">
+                        <div class="article-head">
+                            <h2 id="see-other-work">See what others are doing</h2>
+                        </div>
+                        <div class="lesson-grid">
+                            <div class="mini-card definition-card">
+                                <h3>1. Introduction</h3>
+                                <p>You do not have to work alone in GitHub. You can open other people's repositories,
+                                    browse their files, and see what branches or pull requests are active.</p>
+                            </div>
+                            <div class="mini-card why-card">
+                                <h3>2. Why it exists</h3>
+                                <p>Teams use GitHub to share a project, review code, and keep track of every change.
+                                    Seeing what others have done helps you learn faster.</p>
+                            </div>
+                            <div class="mini-card analogy-card">
+                                <h3>3. Real life analogy</h3>
+                                <p>Imagine a shared classroom project folder. You can open the folder, read the latest
+                                    notes, and compare what changed from last week.</p>
+                            </div>
+                            <div class="mini-card process-card">
+                                <h3>4. How it works</h3>
+                                <div class="article-code-box">
+                                    <code>git clone https://github.com/username/project.git</code>
+                                    <code>git fetch origin</code>
+                                    <code>git branch -r</code>
+                                    <code>git pull origin main</code>
+                                </div>
+                            </div>
+                            <div class="mini-card visual-card">
+                                <h3>5. Visual learning</h3>
+                                <div class="visual-grid">
+                                    <div class="visual-pill">Open repo page</div>
+                                    <div class="visual-pill">Review files</div>
+                                    <div class="visual-pill">Read pull requests</div>
+                                    <div class="visual-pill">Compare branches</div>
+                                </div>
+                            </div>
+                            <div class="mini-card warning-card">
+                                <h3>7. Common beginner mistakes</h3>
+                                <ul>
+                                    <li>Cloning a repo and editing before checking the branch</li>
+                                    <li>Ignoring upstream changes from teammates</li>
+                                    <li>Forgetting to use <code>git pull</code> before you start a new task</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="remember-card">
+                            <strong>Remember this:</strong>
+                            <p>GitHub is where you can view the shared project. Git gives you the local tools to pull
+                                those changes onto your computer.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article-section"
+                    data-keywords="install git configure git config user name email version check">
+                    <div class="article-block lesson-block">
+                        <div class="article-head">
+                            <h2 id="install-git">Install Git</h2>
+                        </div>
+                        <div class="lesson-grid">
+                            <div class="mini-card definition-card">
+                                <h3>1. Introduction</h3>
+                                <p>Before you can use Git, you need to install it on your computer and confirm it works.
+                                </p>
+                            </div>
+                            <div class="mini-card why-card">
+                                <h3>2. Why it exists</h3>
+                                <p>Git must be available on your machine so your terminal can create repositories, track
+                                    changes, and save commits.</p>
+                            </div>
+                            <div class="mini-card process-card">
+                                <h3>4. How it works</h3>
+                                <div class="article-code-box">
+                                    <code>git --version</code>
+                                    <code>git config --global user.name "Your Name"</code>
+                                    <code>git config --global user.email "you@example.com"</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article-section" data-keywords="configure git identity user name email setup">
+                    <div class="article-block lesson-block">
+                        <div class="article-head">
+                            <h2 id="configure-git">Configure Git</h2>
+                        </div>
+                        <div class="lesson-grid">
+                            <div class="mini-card definition-card">
+                                <h3>1. Introduction</h3>
+                                <p>Git needs your identity so it can attach your name and email to every commit you
+                                    create.</p>
+                            </div>
+                            <div class="mini-card why-card">
+                                <h3>2. Why it exists</h3>
+                                <p>This helps teams know who made each change and makes history easier to review.</p>
+                            </div>
+                            <div class="mini-card process-card">
+                                <h3>4. How it works</h3>
+                                <div class="article-code-box">
+                                    <code>git config --global user.name "Your Name"</code>
+                                    <code>git config --global user.email "you@example.com"</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article-section"
+                    data-keywords="git commands init add commit status log push pull clone branch checkout">
+                    <div class="article-block lesson-block">
+                        <div class="article-head">
+                            <h2 id="basic-commands">Basic commands</h2>
+                        </div>
+                        <div class="lesson-grid">
+                            <div class="mini-card definition-card">
+                                <h3>1. Introduction</h3>
+                                <p>These are the most common commands beginners use every day: initialize, stage,
+                                    commit,
+                                    branch, push, pull, and clone.</p>
+                            </div>
+                            <div class="mini-card why-card">
+                                <h3>2. Why it exists</h3>
+                                <p>Each command handles one important task in your Git workflow. Together they let you
+                                    save work, share work, and review team changes smoothly.</p>
+                            </div>
+                            <div class="mini-card process-card">
+                                <h3>4. How it works</h3>
+                                <div class="article-code-box">
+                                    <code>git init</code>
+                                    <code>git add .</code>
+                                    <code>git commit -m "message"</code>
+                                    <code>git status</code>
+                                    <code>git branch</code>
+                                    <code>git checkout -b feature/login</code>
+                                    <code>git push origin feature/login</code>
+                                    <code>git pull origin main</code>
+                                    <code>git clone https://github.com/username/project.git</code>
+                                </div>
+                            </div>
+                            <div class="mini-card warning-card">
+                                <h3>7. Common beginner mistakes</h3>
+                                <ul>
+                                    <li>Using <code>git add .</code> without reviewing what changed</li>
+                                    <li>Trying to push before creating or switching to the right branch</li>
+                                    <li>Forgetting to run <code>git pull</code> before continuing work on an older
+                                        branch</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="remember-card">
+                            <strong>Example workflow:</strong>
+                            <p>Start with <code>git init</code>, write your changes, use <code>git add .</code>, save
+                                with <code>git commit -m "add login feature"</code>, then share with
+                                <code>git push origin feature/login</code>.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="no-results" hidden>No matching article section found.</div>
+            </article>
+        </main>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
