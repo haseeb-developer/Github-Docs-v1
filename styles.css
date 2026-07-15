@@ -23,7 +23,6 @@
 }
 
 body {
-    min-height: 100vh;
     background:
         radial-gradient(circle at top left, rgba(255, 214, 229, 0.55), transparent 24%),
         radial-gradient(circle at top right, rgba(202, 236, 255, 0.55), transparent 22%),
@@ -108,16 +107,16 @@ body {
 }
 
 .article-layout {
-    display: grid;
-    grid-template-columns: 260px 1fr;
+    display: flex;
     gap: 24px;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .toc-card {
     position: sticky;
     top: 16px;
     padding: 20px;
+    flex: 0 0 260px;
 }
 
 .toc-card h2 {
@@ -128,7 +127,8 @@ body {
 
 .toc-card ul {
     list-style: none;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
@@ -141,21 +141,13 @@ body {
     font-weight: 600;
     background: linear-gradient(135deg, rgba(240, 236, 255, 0.8), rgba(255, 244, 248, 0.9));
     border: 1px solid rgba(233, 216, 242, 0.9);
-    transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .toc-card li a:hover {
     color: #6b57c1;
     transform: translateY(-1px);
     box-shadow: 0 8px 18px rgba(162, 137, 218, 0.15);
-}
-
-.toc-card li a.is-active {
-    color: #5b4d96;
-    border-color: #b8a8ff;
-    background: linear-gradient(135deg, rgba(230, 220, 255, 0.95), rgba(255, 236, 243, 0.95));
-    transform: translateX(4px) scale(1.01);
-    box-shadow: 0 12px 26px rgba(143, 126, 217, 0.22);
 }
 
 .article-card {
@@ -191,8 +183,8 @@ body {
 }
 
 .lesson-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 14px;
 }
 
@@ -201,6 +193,8 @@ body {
     border-radius: 16px;
     border: 1px solid rgba(230, 217, 244, 0.95);
     background: #ffffff;
+    flex: 1 1 calc(50% - 7px);
+    min-width: 240px;
 }
 
 .mini-card h3 {
@@ -223,7 +217,8 @@ body {
 .mini-card ol {
     margin: 8px 0 0 0;
     padding-left: 1.1rem;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 8px;
 }
 
@@ -416,8 +411,8 @@ body {
 }
 
 .related-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -427,6 +422,7 @@ body {
     text-decoration: none;
     font-weight: 600;
     color: #614fa6;
+    flex: 1 1 180px;
 }
 
 .no-results {
@@ -451,25 +447,53 @@ body {
 }
 
 @media (max-width: 900px) {
-
-    .article-layout,
-    .lesson-grid,
-    .related-grid {
-        grid-template-columns: 1fr;
+    .article-layout {
+        flex-direction: column;
     }
 
     .toc-card {
         position: static;
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    .lesson-grid {
+        flex-direction: column;
+    }
+
+    .mini-card {
+        flex-basis: 100%;
+        min-width: 0;
+    }
+
+    .related-grid {
+        flex-direction: column;
+    }
+
+    .related-card {
+        width: 100%;
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 770px) {
+    .article-layout {
+        flex-direction: column;
+    }
+
+    .toc-card {
+        width: 100%;
+    }
+
+    .lesson-grid,
+    .related-grid {
+        flex-direction: column;
     }
 }
 
 @media (max-width: 640px) {
     body {
         padding: 12px;
-    }
-
-    .page-shell {
-        width: min(100%, 1180px);
     }
 
     .hero-card,
